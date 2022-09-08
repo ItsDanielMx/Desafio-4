@@ -1,12 +1,10 @@
-const { response } = require("express")
-
 let productsForm = document.getElementById('productsForm')
 
 const handleSubmit = (evt, form, route) => {
     evt.preventDefault()
     let formData = new FormData(form)
     let obj = {}
-    formData.forEach((calue, key) => obj[key]=value)
+    formData.forEach((value, key) => obj[key]=value)
     fetch(route, {
         method: "POST",
         body: JSON.stringify(obj),

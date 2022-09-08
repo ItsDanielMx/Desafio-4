@@ -2,7 +2,7 @@ let products = require('./products.js')
 
 class Manager {
     create = (product) => {
-        let id = products[products.lenght-1].id+1
+        let id = products[products.length-1].id+1
         product = {
             id,
             ...product

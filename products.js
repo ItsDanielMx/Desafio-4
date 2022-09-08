@@ -19,7 +19,7 @@ let products = [
     price: 875,
     thumbnail:
       "https://res.cloudinary.com/itsdanielmx/image/upload/v1653433863/img/Arri-Alexa-Mini-PL-1_y1dzww.jpg",
-  }
+  },
 ]
 
 module.exports = products
