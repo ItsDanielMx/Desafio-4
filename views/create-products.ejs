@@ -1,0 +1,13 @@
+<%- include('./partials/head') %> 
+<h1 class="container mt-5">Crea un producto</h1>
+<form class="container" action="/products" method="post">
+    <label class="mt-2">Title:</label>
+    <input class="form-control" name="title">
+    <label class="mt-2">Price:</label>
+    <input class="form-control" name="price">
+    <label class="mt-2">Thumbnail:</label>
+    <input class="form-control" name="thumbnail">
+    <input class="form-control mt-4" type="submit">
+</form>
+<div class="container"><a href="/products" class="btn btn-dark mt-3" tabindex="-1" role="button" aria-disabled="true">Products</a></div>
+<%- include('./partials/footer') %> 

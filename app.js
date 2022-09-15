@@ -5,5 +5,12 @@ const app = express()
 const server = app.listen(8080, () => console.log('Server Up!'))
 
 app.use(express.json())
-app.use('/', express.static('public'))
-app.use('/api/products', productsRouter)
+app.use(express.urlencoded({extended:true}))
+
+app.set('views', './views')
+app.set('view engine', 'ejs')
+
+app.get('/', (req, res) => {
+    res.render('create-products')
+})
+app.use('/products', productsRouter)

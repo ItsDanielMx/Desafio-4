@@ -1,0 +1,23 @@
+<%- include('./partials/head') %> 
+<% if (products.length>0) { %> 
+    <table class="table container ">
+        <thead>
+          <tr>
+            <th scope="col">Title</th>
+            <th scope="col">Price</th>
+            <th scope="col">Thumbnail</th>
+          </tr>
+        </thead>
+    <% products.forEach(item => { %>
+            <tbody>
+              <tr>
+                <td><div class=" mt-2"><%= item.title  %></div></td>
+                <td><div class=" mt-2">$<%= item.price  %></div></td>
+                <td><img class=" mt-2" src='<%= item.thumbnail  %>' width="20%"></td>
+              </tr>
+    <% }) %> 
+<% } else { %>
+    <p class="container mt-2">No hay datos</p>
+<% } %> 
+<div class="container d-flex justify-content-center"><a href="/" class="btn btn-dark mt-3" tabindex="-1" role="button" aria-disabled="true">Create a product</a></div>
+<%- include('./partials/footer') %> 

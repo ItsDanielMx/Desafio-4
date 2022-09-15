@@ -6,7 +6,9 @@ const manager = new Manager()
 
 router.get('/', (req, res) => {
     let result = manager.findAll()
-    res.send(result)
+    res.render('get-products', {
+        products: result
+    })
 })
 
 router.get('/:id', (req, res) => {
@@ -17,8 +19,8 @@ router.get('/:id', (req, res) => {
 
 router.post('/', (req, res) => {
     if (!req.body.title || !req.body.price || !req.body.thumbnail) return res.send({error: 'data is required'})
-    let result = manager.create(req.body)
-    res.send(result)    
+    manager.create(req.body)
+    res.redirect('/')    
 })
 
 router.put('/:id', (req, res) => {
